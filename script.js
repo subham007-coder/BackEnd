@@ -1,3 +1,4 @@
-let sumVal = require("./fruits");
+import { sum, pI } from "./math.js";
 
-console.log(sumVal);
+console.log(sum(1, 2));
+console.log(pI);
