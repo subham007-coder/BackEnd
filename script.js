@@ -1,3 +1,3 @@
-let sumVal = require("./math");
+let sumVal = require("./fruits");
 
-console.log(sumVal.sum(2, 2));
+console.log(sumVal);
