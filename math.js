@@ -11,4 +11,12 @@ let myObj = {
 }
 
 
+// module.exports = {
+//     sum: sum,
+//     mul: mul,
+//     g: g,
+//     pI: pI,
+// }  // ==> eta short ee
+
+
 module.exports = myObj;
