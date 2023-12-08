@@ -25,11 +25,13 @@
                                 <%= post.content %>
                             </p>
 
-                            <form action="/posts/<%= post.id %>" method="get">
-                                <button class="btn btn-primary">See Post</button>
-                            </form>
+                            <div class="path">
+                                <form action="/posts/<%= post.id %>" method="get">
+                                    <button class="btn btn-primary">See Post</button>
+                                </form>
                                 
-                            <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
                         </div>
                     </div>
                 </div>

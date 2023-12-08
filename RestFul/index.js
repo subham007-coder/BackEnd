@@ -33,7 +33,8 @@ app.get("/posts/new", (req, res) => {
 
 app.post("/posts", (req, res) => {
     const { username, content } = req.body;
-    posts.push({ username, content });
+    let id = uuidv4();
+    posts.push({id, username, content });
     res.redirect("/posts");
 });
 
