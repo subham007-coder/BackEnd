@@ -29,11 +29,11 @@
                                 <form action="/posts/<%= post.id %>" method="get">
                                     <button class="btn btn-primary">See Post</button>
                                 </form>
-                                
-                                <form action="/posts/edit" method="get">
-                                <button class="btn btn-success">Edit Post</button>
-                            </form>
-                                
+
+                                <form action="/posts/<%= post.id %>/edit" method="get">
+                                    <button class="btn btn-success">Edit Post</button>
+                                </form>
+
                                 <button class="btn btn-danger">Delete</button>
                             </div>
                         </div>
