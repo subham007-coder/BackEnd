@@ -1,4 +1,6 @@
 const express = require("express");
+const { v4: uuidv4 } = require('uuid'); // require korlam uuid ke random id pawar jonno; 
+
 const app = express();
 const path = require("path");
 app.use(express.urlencoded({ extended: true }));
@@ -9,12 +11,12 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 let posts = [
     {
-        id: "1a",
+        id: uuidv4(),
         username: "Subham Das",
         content: "With supporting text below as a natural lead-in to additional content."
     },
     {
-        id: "2b",
+        id: uuidv4(),
         username: "Adrija Pal",
         content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, commodi!"
     }
