@@ -9,15 +9,16 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 let posts = [
     {
+        id: "1a",
         username: "Subham Das",
         content: "With supporting text below as a natural lead-in to additional content."
     },
     {
+        id: "2b",
         username: "Adrija Pal",
         content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, commodi!"
     }
 ];
-
 
 
 app.get("/posts", (req, res) => {
@@ -29,11 +30,16 @@ app.get("/posts/new", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
-    const {username, content} = req.body;
-    posts.push({username, content});
+    const { username, content } = req.body;
+    posts.push({ username, content });
     res.redirect("/posts");
 });
 
+app.get("/posts/:id", (req, res) => {
+    let { id } = req.params;
+    let post = posts.find((p) => id === p.id);
+    res.render("show.ejs", {post});
+});
 
 const port = 8080;
 
