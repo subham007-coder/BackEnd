@@ -13,10 +13,14 @@
 <body class="container">
     <h1>Edit Content</h1>
 
-    <form action="">
-        
+    <h4>Post Id :- <%= post.id %></h4>
+    <h5>username :- <%= post.username %>
+    </h5>
+    <form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+        <textarea name="content" id="" cols="30" rows="5"><%= post.content %></textarea>
+        <button class="btn btn-success">Submit</button>
     </form>
-    
+
     <br>
     <form method="get" action="/posts/new">
         <button class="btn btn-warning">Creat A New Posts</button>

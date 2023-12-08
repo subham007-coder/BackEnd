@@ -4,7 +4,9 @@ const { v4: uuidv4 } = require('uuid'); // require korlam uuid ke random id pawa
 const app = express();
 const path = require("path");
 const { log } = require("console");
+const methodOverride = require('method-override')
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -48,18 +50,18 @@ app.get("/posts/:id", (req, res) => {
 app.get("/posts/:id/edit", (req, res) => {
     let { id } = req.params;
     let post = posts.find((p) => id === p.id);
-    res.render("update.ejs");
+    res.render("update.ejs", { post });
 });
 
-// app.patch("/posts/:id", (req, res) => {
-//     let { id } = req.params;
-//     let post = posts.find((p) => id === p.id);
+app.patch("/posts/:id", (req, res) => {
+    let { id } = req.params;
+    let newContent = req.body.content;
+    let post = posts.find((p) => id === p.id);
 
-//     let newContent = req.body.content;
-//     post.content = newContent;
-//     console.log(post);
-// });
-
+    post.content = newContent;
+    console.log(post);
+    res.redirect("/posts");
+});
 
 const port = 8080;
 
