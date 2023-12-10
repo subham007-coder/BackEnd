@@ -65,8 +65,8 @@ app.patch("/posts/:id", (req, res) => {
 
 app.delete("/posts/:id", (req, res,) => {
     let { id } = req.params;
-    posts = posts.filter((p) => {
-        id !== p.id;
+    posts = posts.filter((t) => {
+        id !== t.id;
     });
     res.redirect("/posts");
 });
