@@ -34,7 +34,9 @@
                                     <button class="btn btn-success">Edit Post</button>
                                 </form>
 
-                                <button class="btn btn-danger">Delete</button>
+                                <form method="post" action="/posts/ <%= post.id %>?_method=DELETE">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>

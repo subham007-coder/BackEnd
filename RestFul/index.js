@@ -55,11 +55,17 @@ app.get("/posts/:id/edit", (req, res) => {
 
 app.patch("/posts/:id", (req, res) => {
     let { id } = req.params;
-    let newContent = req.body.content;
     let post = posts.find((p) => id === p.id);
+    let newContent = req.body.content;
 
     post.content = newContent;
     console.log(post);
+    res.redirect("/posts");
+});
+
+app.delete("/posts/:id", (req, res,) => {
+    let {id} = req.params;
+    posts = posts.pop((p) => id == p.id);
     res.redirect("/posts");
 });
 
